@@ -15,8 +15,8 @@ const navigations = [
         url: 'dashboard'
     },
     {
-        title: 'Artikel',
-        url: 'dashboard'
+        title: 'Blog',
+        url: 'blog.index'
     },
 ];
 </script>
