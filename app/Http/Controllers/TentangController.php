@@ -9,6 +9,6 @@ class TentangController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Tentang/Index', []);
+        return Inertia::render('Tentang/Index', ['pageTitle' => 'Tentang']);
     }
 }

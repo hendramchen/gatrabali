@@ -9,6 +9,6 @@ class PengusadaController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Pengusada/Index', []);
+        return Inertia::render('Pengusada/Index', ['pageTitle' => 'Pengusada']);
     }
 }

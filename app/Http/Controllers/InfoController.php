@@ -9,6 +9,6 @@ class InfoController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Info/Index', []);
+        return Inertia::render('Info/Index', ['pageTitle' => 'Info']);
     }
 }

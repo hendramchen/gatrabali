@@ -9,6 +9,6 @@ class BertanyaController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Bertanya/Index', []);
+        return Inertia::render('Bertanya/Index', ['pageTitle' => 'Bertanya']);
     }
 }

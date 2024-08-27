@@ -9,6 +9,6 @@ class KonsultasiController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Konsultasi/Index', []);
+        return Inertia::render('Konsultasi/Index', ['pageTitle' => 'Konsultasi']);
     }
 }
