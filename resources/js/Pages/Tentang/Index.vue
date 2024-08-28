@@ -8,12 +8,15 @@ import { Head } from '@inertiajs/vue3';
     <Head title="Tentang" />
 
     <VisitorLayout>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">Tentang</div>
-                </div>
-            </div>
+        <div class="py-12 text-slate-700">
+            <h1 class="text-2xl font-semibold mb-4">Tentang Gatrabali</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, asperiores, quos sed corrupti facere neque
+                ab excepturi illum dolor sapiente assumenda voluptatem error non sint, incidunt a possimus sunt ratione.
+            </p>
+            <p>Quos sed corrupti facere neque ab excepturi illum dolor sapiente assumenda voluptatem error non sint
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, asperiores, quos sed corrupti facere
+                neque ab excepturi illum dolor sapiente assumenda voluptatem error non sint, incidunt a possimus sunt
+                ratione.</p>
         </div>
     </VisitorLayout>
 </template>

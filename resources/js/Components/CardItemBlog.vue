@@ -18,7 +18,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="flex w-full flex-col lg:flex-row mb-8">
+    <div class="flex w-full flex-col lg:flex-row mb-8 border-b border-slate-200 pb-6">
         <div class="lg:w-3/4 order-2 lg:order-1 flex flex-col justify-between">
             <div class="pr-4 text-slate-700">
                 <h2 class="text-2xl font-semibold">
