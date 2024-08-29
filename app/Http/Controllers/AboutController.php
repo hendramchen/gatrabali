@@ -13,7 +13,11 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return Inertia::render('About/Index', []);
+        $about = About::all();
+
+        return Inertia::render('About/Edit', [
+            'about' => $about[0]
+        ]);
     }
 
     /**
