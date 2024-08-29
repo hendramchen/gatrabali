@@ -13,7 +13,7 @@ class QnaController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Blogs/Index', []);
+        return Inertia::render('Qna/Index', []);
     }
 
     /**

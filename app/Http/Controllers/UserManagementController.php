@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Consultation;
+use App\Models\UserManagement;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class ConsultationController extends Controller
+class UserManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Inertia::render('Consultation/Index', []);
+        return Inertia::render('UserManagement/Index', []);
     }
 
     /**
@@ -35,7 +35,7 @@ class ConsultationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Consultation $consultation)
+    public function show(UserManagement $userManagement)
     {
         //
     }
@@ -43,7 +43,7 @@ class ConsultationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Consultation $consultation)
+    public function edit(UserManagement $userManagement)
     {
         //
     }
@@ -51,7 +51,7 @@ class ConsultationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Consultation $consultation)
+    public function update(Request $request, UserManagement $userManagement)
     {
         //
     }
@@ -59,7 +59,7 @@ class ConsultationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Consultation $consultation)
+    public function destroy(UserManagement $userManagement)
     {
         //
     }

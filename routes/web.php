@@ -1,28 +1,23 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BertanyaController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\PengusadaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QnaController;
 use App\Http\Controllers\TentangController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\UserManagementController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('Welcome', []);
 });
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,10 +25,35 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::resource('blog', BlogController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
+Route::resource('about', AboutController::class)
+    ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('qna', QnaController::class)
+    ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('doc', DoctorController::class)
+    ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('consultation', ConsultationController::class)
+    ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('user-management', UserManagementController::class)
+    ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
+
+// Routes for Visitor
 Route::resource('info', InfoController::class)
     ->only(['index']);
 
