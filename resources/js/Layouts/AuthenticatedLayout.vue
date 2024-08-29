@@ -19,6 +19,10 @@ const navigations = [
         url: 'blog.index'
     },
     {
+        title: 'Kategori',
+        url: 'category.index'
+    },
+    {
         title: 'Pertanyaan',
         url: 'qna.index'
     },
@@ -120,8 +124,9 @@ const navigations = [
                 <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
                     class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                        <ResponsiveNavLink :key="item.title" :href="route(item.url)" :active="route().current(item.url)"
+                            v-for="item in navigations">
+                            {{ item.title }}
                         </ResponsiveNavLink>
                     </div>
 
