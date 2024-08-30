@@ -2,6 +2,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
+defineProps({
+    questions: Array,
+});
 </script>
 
 <template>
@@ -13,7 +16,7 @@ import { Head } from '@inertiajs/vue3';
         </template>
 
         <div class="py-12">
-            Pertanyaan
+            <div v-for="item in questions" :key="item.id">{{ item.title }}</div>
         </div>
     </AuthenticatedLayout>
 </template>

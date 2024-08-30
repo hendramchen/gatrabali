@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Qna;
+use App\Models\Answer;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class QnaController extends Controller
+class AnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // return Inertia::render('Qna/Index', []);
+        //
     }
 
     /**
@@ -35,7 +34,7 @@ class QnaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Qna $qna)
+    public function show(Answer $answer)
     {
         //
     }
@@ -43,7 +42,7 @@ class QnaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Qna $qna)
+    public function edit(Answer $answer)
     {
         //
     }
@@ -51,7 +50,7 @@ class QnaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Qna $qna)
+    public function update(Request $request, Answer $answer)
     {
         //
     }
@@ -59,7 +58,7 @@ class QnaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Qna $qna)
+    public function destroy(Answer $answer)
     {
         //
     }

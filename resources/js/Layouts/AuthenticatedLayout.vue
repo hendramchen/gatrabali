@@ -16,31 +16,31 @@ const navigations = [
     },
     {
         title: 'Artikel',
-        url: 'blog.index'
+        url: 'blogs.index'
     },
     {
         title: 'Kategori',
-        url: 'category.index'
+        url: 'categories.index'
     },
     {
         title: 'Pertanyaan',
-        url: 'qna.index'
+        url: 'questions.index'
     },
     {
         title: 'Konsultasi',
-        url: 'consultation.index'
+        url: 'consultations.index'
     },
     {
         title: 'Pengusada',
-        url: 'doc.index'
+        url: 'doctors.index'
     },
     {
         title: 'Tentang',
-        url: 'about.index'
+        url: 'abouts.index'
     },
     {
         title: 'User Management',
-        url: 'user-management.index'
+        url: 'user-managements.index'
     },
 ];
 </script>

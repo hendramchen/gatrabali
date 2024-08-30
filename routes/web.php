@@ -11,6 +11,7 @@ use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\PengusadaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QnaController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UserManagementController;
 use Illuminate\Support\Facades\Route;
@@ -30,31 +31,31 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('blog', BlogController::class)
+Route::resource('blogs', BlogController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-Route::resource('category', CategoryController::class)
+Route::resource('categories', CategoryController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-Route::resource('about', AboutController::class)
+Route::resource('abouts', AboutController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-Route::resource('qna', QnaController::class)
+Route::resource('questions', QuestionController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-Route::resource('doc', DoctorController::class)
+Route::resource('doctors', DoctorController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-Route::resource('consultation', ConsultationController::class)
+Route::resource('consultations', ConsultationController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
-Route::resource('user-management', UserManagementController::class)
+Route::resource('user-managements', UserManagementController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
