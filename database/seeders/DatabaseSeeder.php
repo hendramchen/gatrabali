@@ -18,11 +18,25 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'role' => 'admin',
         ]);
 
         User::factory()->create([
             'name' => 'Administrator',
             'email' => 'admin@example.com',
+            'role' => 'admin',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Hendra',
+            'email' => 'hendra@example.com',
+            'role' => 'visitor',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Manika',
+            'email' => 'manika@example.com',
+            'role' => 'doctor',
         ]);
 
         $this->call([
@@ -30,6 +44,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             QuestionSeeder::class,
             AnswerSeeder::class,
+            DoctorSeeder::class,
+            ConsultationSeeder::class,
         ]);
     }
 }

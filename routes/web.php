@@ -10,7 +10,6 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\PengusadaController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\QnaController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UserManagementController;

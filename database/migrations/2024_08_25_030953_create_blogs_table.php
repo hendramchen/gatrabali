@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('slug');
+            $table->string('image_path')->nullable();
             $table->json('hashtags')->nullable();
             $table->json('highlight')->nullable();
             $table->json('description')->nullable();

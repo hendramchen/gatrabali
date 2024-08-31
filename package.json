@@ -18,7 +18,6 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "@editorjs/editorjs": "^2.30.5",
-        "@editorjs/header": "^2.8.7"
+        "@tinymce/tinymce-vue": "^5.1.1"
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UserManagement;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -13,7 +14,8 @@ class UserManagementController extends Controller
      */
     public function index()
     {
-        return Inertia::render('UserManagement/Index', []);
+        $users = User::all();
+        return Inertia::render('UserManagement/Index', ['users' => $users]);
     }
 
     /**
@@ -35,7 +37,7 @@ class UserManagementController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(UserManagement $userManagement)
+    public function show(User $user)
     {
         //
     }
@@ -43,7 +45,7 @@ class UserManagementController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(UserManagement $userManagement)
+    public function edit(User $user)
     {
         //
     }
@@ -51,7 +53,7 @@ class UserManagementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, UserManagement $userManagement)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -59,7 +61,7 @@ class UserManagementController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(UserManagement $userManagement)
+    public function destroy(User $user)
     {
         //
     }

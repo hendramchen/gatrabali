@@ -2,6 +2,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
+defineProps({
+    doctors: Array
+})
 </script>
 
 <template>
@@ -13,7 +16,7 @@ import { Head } from '@inertiajs/vue3';
         </template>
 
         <div class="py-12">
-            Pengusada
+            <div v-for="item in doctors" :key="item.id">{{ item.description }}</div>
         </div>
     </AuthenticatedLayout>
 </template>

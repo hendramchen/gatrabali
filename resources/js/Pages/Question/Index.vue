@@ -5,6 +5,8 @@ import { Head } from '@inertiajs/vue3';
 defineProps({
     questions: Array,
 });
+
+
 </script>
 
 <template>
@@ -16,7 +18,9 @@ defineProps({
         </template>
 
         <div class="py-12">
-            <div v-for="item in questions" :key="item.id">{{ item.title }}</div>
+            <div v-for="item in questions" :key="item.id">
+                <p>{{ item.title }}</p>
+            </div>
         </div>
     </AuthenticatedLayout>
 </template>

@@ -2,6 +2,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
+defineProps({
+    users: Array
+})
 </script>
 
 <template>
@@ -14,6 +17,7 @@ import { Head } from '@inertiajs/vue3';
 
         <div class="py-12">
             User Detail
+            <div v-for="item in users" :key="item.id">{{ item.name }}</div>
         </div>
     </AuthenticatedLayout>
 </template>

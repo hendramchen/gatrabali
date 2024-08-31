@@ -13,7 +13,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Doctor/Index', []);
+        $doctors = Doctor::all();
+        return Inertia::render('Doctor/Index', ['doctors' => $doctors]);
     }
 
     /**
