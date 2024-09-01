@@ -13,7 +13,8 @@ class ConsultationController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Consultation/Index', []);
+        $consultations = Consultation::all();
+        return Inertia::render('Consultation/Index', ['consultations' => $consultations]);
     }
 
     /**

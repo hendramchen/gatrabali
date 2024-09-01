@@ -18,6 +18,8 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "@tinymce/tinymce-vue": "^5.1.1"
+        "@tinymce/tinymce-vue": "^5.1.1",
+        "datatables.net-dt": "^2.1.5",
+        "datatables.net-vue3": "^3.0.2"
     }
 }

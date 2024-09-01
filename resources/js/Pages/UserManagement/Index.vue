@@ -1,4 +1,5 @@
 <script setup>
+import Container from '@/Components/Container.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
@@ -15,9 +16,11 @@ defineProps({
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">User Management</h2>
         </template>
 
-        <div class="py-12">
-            User Detail
+        <Container title="Daftar User">
             <div v-for="item in users" :key="item.id">{{ item.name }}</div>
-        </div>
+        </Container>
+
+
+
     </AuthenticatedLayout>
 </template>

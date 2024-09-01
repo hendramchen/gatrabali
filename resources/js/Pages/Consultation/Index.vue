@@ -1,7 +1,11 @@
 <script setup>
+import Container from '@/Components/Container.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
+defineProps({
+    consultations: Array
+})
 </script>
 
 <template>
@@ -12,8 +16,11 @@ import { Head } from '@inertiajs/vue3';
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Konsultasi Management</h2>
         </template>
 
-        <div class="py-12">
-            Konsultasi
-        </div>
+        <Container title="Daftar Konsultasi">
+            <div v-for="item in consultations" :key="item.id">{{ item.problem }}</div>
+        </Container>
+
+
+
     </AuthenticatedLayout>
 </template>

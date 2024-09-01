@@ -1,10 +1,27 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import Container from '@/Components/Container.vue';
+import DataTable from 'datatables.net-vue3';
+import DataTablesCore from 'datatables.net-dt';
+
+DataTable.use(DataTablesCore);
+
 
 defineProps({
     categories: Array
 });
+
+const columns = [
+    { data: 'id', title: '#' },
+    { data: 'name', title: 'Name' },
+    {
+        data: null,
+        render: '#action',
+        title: 'Action'
+    },
+];
+
 </script>
 
 <template>
@@ -15,29 +32,23 @@ defineProps({
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Categories</h2>
         </template>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left text-gray-500">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-200">
-                                <tr>
-                                    <th scope="col" class="px-4 py-3">#</th>
-                                    <th scope="col" class="px-4 py-3">Name</th>
-                                    <th scope="col" class="px-4 py-3 text-right">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-slate-700">
-                                <tr v-for="(item, index) in categories" :key="index" class="border-b">
-                                    <td class="px-4 py-3">{{ index + 1 }}</td>
-                                    <td class="px-4 py-3">{{ item.name }}</td>
-                                    <td class="px-4 py-3 text-right">Edit | Delete</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Container title="Daftar Kategori">
+            <DataTable :columns="columns" :data="categories" class="display" width="100%">
+                <template #action="props">
+                    <button class="bg-slate-500 text-white">Edit {{ props.rowData.id }}</button>
+                </template>
+            </DataTable>
+        </Container>
+
+
     </AuthenticatedLayout>
 </template>
+
+<style>
+@import 'datatables.net-dt';
+
+select.dt-input {
+    width: 5rem;
+    margin-right: 0.5rem;
+}
+</style>
