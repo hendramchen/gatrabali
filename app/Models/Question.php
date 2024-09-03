@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Question extends Model
 {
@@ -12,9 +13,9 @@ class Question extends Model
 
     protected $fillable = ['title', 'slug', 'description', 'question_status', 'user_id'];
 
-    public function answer()
+    public function answers(): HasMany
     {
-        return $this->belongsTo(Answer::class);
+        return $this->hasMany(Answer::class);
     }
 
     public function user(): BelongsTo

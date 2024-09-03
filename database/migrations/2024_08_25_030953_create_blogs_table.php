@@ -17,9 +17,8 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('slug');
             $table->string('image_path')->nullable();
-            $table->json('hashtags')->nullable();
-            $table->json('highlight')->nullable();
-            $table->json('description')->nullable();
+            $table->text('highlight')->nullable();
+            $table->text('description')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
