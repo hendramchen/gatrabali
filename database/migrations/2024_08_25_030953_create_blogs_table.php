@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->text('highlight')->nullable();
             $table->text('description')->nullable();
+            $table->string('blog_status');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

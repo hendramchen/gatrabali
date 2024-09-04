@@ -13,11 +13,15 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UserManagementController;
+use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', []);
+    $blogs = Blog::all();
+    $categories = Category::all();
+    return Inertia::render('Welcome', ['blogs' => $blogs, 'categories' => $categories]);
 });
 
 Route::middleware('auth')->group(function () {
@@ -60,7 +64,7 @@ Route::resource('user-managements', UserManagementController::class)
 
 // Routes for Visitor
 Route::resource('info', InfoController::class)
-    ->only(['index']);
+    ->only(['index', 'show']);
 
 Route::resource('pengusada', PengusadaController::class)
     ->only(['index']);

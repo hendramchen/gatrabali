@@ -55,6 +55,10 @@ class BlogResource extends Resource
                     ])
                     ->required(),
                 Forms\Components\Select::make('user_id')->relationship('user', 'name')->required(),
+                Forms\Components\Select::make('blog_status')->options([
+                    'draft' => 'Draft',
+                    'publish' => 'Publish'
+                ])->required(),
                 Forms\Components\Section::make('Image')
                     ->schema([
                         Forms\Components\FileUpload::make('image_path')
@@ -72,6 +76,7 @@ class BlogResource extends Resource
                 Tables\Columns\TextColumn::make('title')->searchable(),
                 Tables\Columns\TextColumn::make('highlight'),
                 Tables\Columns\TextColumn::make('category.name'),
+                Tables\Columns\TextColumn::make('blog_status'),
                 Tables\Columns\TextColumn::make('created_at'),
             ])
             ->filters([

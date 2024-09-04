@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -9,6 +10,8 @@ class PengusadaController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Pengusada/Index', ['pageTitle' => 'Pengusada']);
+        $doctors = Doctor::with('user')->get();
+
+        return Inertia::render('Pengusada/Index', ['doctors' => $doctors]);
     }
 }

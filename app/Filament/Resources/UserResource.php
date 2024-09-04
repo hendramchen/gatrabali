@@ -23,7 +23,33 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->label('Full name')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('email')
+                    ->label('Email address')
+                    ->required()
+                    ->maxLength(255)
+                    ->email()
+                    ->unique(User::class, 'email', ignoreRecord: true),
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Select::make('role')->options([
+                    'admin' => 'Admin',
+                    'doctor' => 'Doctor',
+                    'visitor' => 'Visitor',
+                ])->required(),
+                Forms\Components\Section::make('Photo')
+                    ->schema([
+                        Forms\Components\FileUpload::make('photo')
+                            ->image()
+                            ->hiddenLabel(),
+                    ])
+                    ->collapsible(),
             ]);
     }
 
@@ -31,12 +57,16 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('role'),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('role')->options([
+                    'admin' => 'Admin',
+                    'doctor' => 'Doctor',
+                    'visitor' => 'Visitor',
+                ])
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

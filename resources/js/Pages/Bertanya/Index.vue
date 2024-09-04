@@ -2,29 +2,32 @@
 import VisitorLayout from '@/Layouts/VisitorLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
-const questions = [
-    {
-        id: 1,
-        profile: 'H',
-        question: 'Bagaimana menyembuhkan flu dengan obat herbal?',
-        from: 'He**a',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquam in possimus optio reprehenderit iure ipsa unde omnis adipisci'
-    },
-    {
-        id: 2,
-        profile: 'M',
-        question: 'Bagaimana menyembuhkan flu dengan obat herbal?',
-        from: 'Man**a',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquam in possimus optio reprehenderit iure ipsa unde omnis adipisci'
-    },
-    {
-        id: 3,
-        profile: 'N',
-        question: 'Bagaimana menyembuhkan flu dengan obat herbal?',
-        from: 'N***i',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquam in possimus optio reprehenderit iure ipsa unde omnis adipisci'
-    },
-];
+defineProps({
+    questions: Array
+});
+// const questions = [
+//     {
+//         id: 1,
+//         profile: 'H',
+//         question: 'Bagaimana menyembuhkan flu dengan obat herbal?',
+//         from: 'He**a',
+//         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquam in possimus optio reprehenderit iure ipsa unde omnis adipisci'
+//     },
+//     {
+//         id: 2,
+//         profile: 'M',
+//         question: 'Bagaimana menyembuhkan flu dengan obat herbal?',
+//         from: 'Man**a',
+//         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquam in possimus optio reprehenderit iure ipsa unde omnis adipisci'
+//     },
+//     {
+//         id: 3,
+//         profile: 'N',
+//         question: 'Bagaimana menyembuhkan flu dengan obat herbal?',
+//         from: 'N***i',
+//         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquam in possimus optio reprehenderit iure ipsa unde omnis adipisci'
+//     },
+// ];
 </script>
 
 <template>
@@ -51,13 +54,14 @@ const questions = [
                 <div class="border-b border-slate-300 py-5" :key="item.id" v-for="item in questions">
                     <div class="flex">
                         <div class="rounded-lg w-12 h-12 bg-gray-300 flex items-center justify-center">
-                            {{ item.profile }}
+                            {{ item.user.name.charAt(0) }}
                         </div>
                         <div class="ml-4">
                             <p class="font-semibold">
-                                {{ item.question }}
+                                {{ item.title }}
                             </p>
-                            <p>Oleh: {{ item.from }}</p>
+                            <p>Oleh: {{ item.user.name }}</p>
+                            <p>{{ item.answers ? 'Lihat jawaban' : '' }}</p>
                         </div>
                     </div>
                     <div class="pt-5">

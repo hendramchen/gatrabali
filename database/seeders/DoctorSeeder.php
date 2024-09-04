@@ -15,7 +15,7 @@ class DoctorSeeder extends Seeder
     {
         Doctor::create([
             'category_id' => 3,
-            'user_id' => 4,
+            'user_id' => 6,
             'description' => 'Pengobat tradisional'
         ]);
     }

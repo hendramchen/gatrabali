@@ -22,8 +22,10 @@ const form = useForm({
 
     <VisitorLayout>
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <h1 class="text-2xl mb-5">Konsultasi</h1>
+            <div class="w-full mx-auto sm:px-6 lg:px-8">
+                <h1 class="text-4xl mb-8 text-slate-700 font-semibold">
+                    Konsultasi
+                </h1>
                 <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6">
                     <div>
                         <InputLabel for="fullname" value="Nama lengkap" />

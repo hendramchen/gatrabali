@@ -15,7 +15,7 @@ class AnswerSeeder extends Seeder
         Answer::create([
             'question_id' => 1,
             'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium dolores quo ipsum distinctio iste laboriosam repudiandae. Quis ad perferendis et a fugiat pariatur amet id deleniti. Sapiente odio dicta quo.',
-            'user_id' => 2
+            'user_id' => 6
         ]);
     }
 }
