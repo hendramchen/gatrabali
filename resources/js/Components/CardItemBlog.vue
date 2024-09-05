@@ -21,7 +21,7 @@ function getImageCover(item) {
                 <h2 class="text-2xl font-semibold">
                     {{ blog.title }}
                 </h2>
-                <p class="mt-4">
+                <p class="mt-4 text-lg">
                     {{ blog.highlight }}
                 </p>
             </div>

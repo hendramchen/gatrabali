@@ -26,11 +26,11 @@ function getImageCover(item) {
     <Head :title="blog.title" />
 
     <VisitorLayout>
-        <div class="py-12">
-            <h1 class="text-slate-700 text-4xl font-semibold">{{ blog.title }}</h1>
-            <p class="font-semibold text-slate-700 my-4">{{ blog.highlight }}</p>
-            <img :src="getImageCover(blog.image_path)" class="rounded-md w-full" alt="kesehatan" />
-            <p v-html="html"></p>
+        <div class="py-12 text-slate-700 text-lg">
+            <h1 class="text-slate-700 text-4xl font-semibold mb-9">{{ blog.title }}</h1>
+            <p class="font-semibold text-slate-700 my-4 leading-9">{{ blog.highlight }}</p>
+            <img :src="getImageCover(blog.image_path)" class="rounded-md w-full my-6" alt="kesehatan" />
+            <p v-html="html" class="leading-9"></p>
         </div>
     </VisitorLayout>
 

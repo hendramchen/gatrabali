@@ -52,11 +52,11 @@ defineProps({
                     Diskusi Kesehatan Terbaru
                 </h1>
                 <div class="border-b border-slate-300 py-5" :key="item.id" v-for="item in questions">
-                    <div class="flex">
+                    <div class="flex flex-col md:flex-row text-lg text-slate-700">
                         <div class="rounded-lg w-12 h-12 bg-gray-300 flex items-center justify-center">
                             {{ item.user.name.charAt(0) }}
                         </div>
-                        <div class="ml-4">
+                        <div class="my-4 md:my-0 md:ml-4">
                             <p class="font-semibold">
                                 {{ item.title }}
                             </p>
@@ -64,7 +64,7 @@ defineProps({
                             <p>{{ item.answers ? 'Lihat jawaban' : '' }}</p>
                         </div>
                     </div>
-                    <div class="pt-5">
+                    <div class="pt-5 text-lg text-slate-700">
                         {{ item.description }}
                     </div>
                 </div>

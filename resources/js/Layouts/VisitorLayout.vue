@@ -11,7 +11,7 @@ import Footer from '@/Components/Footer.vue';
             <Navigation />
         </header>
         <main class="flex-1 flex px-4">
-            <div class="flex-1 max-w-6xl mx-auto flex md:flex-row flex-col">
+            <div class="flex-1 max-w-3xl mx-auto flex md:flex-row flex-col">
                 <slot />
             </div>
         </main>
