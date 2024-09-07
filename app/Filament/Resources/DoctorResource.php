@@ -17,6 +17,8 @@ class DoctorResource extends Resource
 {
     protected static ?string $model = Doctor::class;
 
+    protected static ?string $navigationLabel = 'Pengusada';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

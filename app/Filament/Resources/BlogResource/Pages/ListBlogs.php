@@ -10,6 +10,8 @@ class ListBlogs extends ListRecords
 {
     protected static string $resource = BlogResource::class;
 
+    protected static ?string $title = 'Daftar Artikel';
+
     protected function getHeaderActions(): array
     {
         return [

@@ -10,6 +10,8 @@ class ListQuestions extends ListRecords
 {
     protected static string $resource = QuestionResource::class;
 
+    protected static ?string $title = 'Daftar Pertanyaan';
+
     protected function getHeaderActions(): array
     {
         return [

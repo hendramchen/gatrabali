@@ -31,36 +31,36 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return redirect('/');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('blogs', BlogController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('blogs', BlogController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
-Route::resource('categories', CategoryController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('categories', CategoryController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
-Route::resource('abouts', AboutController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('abouts', AboutController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
-Route::resource('questions', QuestionController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('questions', QuestionController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
-Route::resource('doctors', DoctorController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('doctors', DoctorController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
-Route::resource('consultations', ConsultationController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('consultations', ConsultationController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
-Route::resource('user-managements', UserManagementController::class)
-    ->only(['index', 'store'])
-    ->middleware(['auth', 'verified']);
+// Route::resource('user-managements', UserManagementController::class)
+//     ->only(['index', 'store'])
+//     ->middleware(['auth', 'verified']);
 
 // Routes for Visitor
 Route::resource('info', InfoController::class)

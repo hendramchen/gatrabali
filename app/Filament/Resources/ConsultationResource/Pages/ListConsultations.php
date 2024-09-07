@@ -10,6 +10,8 @@ class ListConsultations extends ListRecords
 {
     protected static string $resource = ConsultationResource::class;
 
+    protected static ?string $title = 'Daftar Konsultasi';
+
     protected function getHeaderActions(): array
     {
         return [
