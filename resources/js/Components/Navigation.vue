@@ -4,6 +4,7 @@ import { Link } from '@inertiajs/vue3';
 import NavLinkEU from '@/Components/NavLinkEU.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
+import Logo from './Logo.vue';
 
 const showingNavigation = ref(false);
 const showDropdownProfile = ref(false);
@@ -40,9 +41,10 @@ const displayDropdown = computed(() => {
 </script>
 
 <template>
-    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 max-w-6xl mx-auto mb-4 relative">
+    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 max-w-7xl mx-auto mb-4 relative">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" class="flex items-center">
+                <Logo class="w-10 h-10 mr-5" />
                 <span class="self-center text-xl font-semibold whitespace-nowrap text-green-600">Gatrabali</span>
             </a>
             <div class="flex items-center md:order-2 lg:order-2">
