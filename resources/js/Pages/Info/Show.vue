@@ -15,7 +15,7 @@ const html = converter.makeHtml(text);
 
 function getImageCover(item) {
     if (item) {
-        return 'http://127.0.0.1:8000/storage/' + item;
+        return '/storage/' + item;
     }
     return null;
 }

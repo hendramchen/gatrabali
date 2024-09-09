@@ -49,10 +49,9 @@ defineProps({
             </svg>
 
             <h2 class="text-2xl font-semibold my-4 text-yellow-600">Informasi Kesehatan</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laboriosam exercitationem, nulla
-              incidunt
-              totam enim! Saepe, fugiat ullam? Consequatur ipsum saepe repellat aliquam? Suscipit debitis rem esse neque
-              blanditiis enim.</p>
+            <p>Temukan berbagai artikel dan panduan terpercaya yang membahas berbagai topik kesehatan, mulai dari
+              perawatan tubuh, hingga pengobatan alami untuk berbagai penyakit. Dapatkan pengetahuan yang membantu Anda
+              menjaga kesehatan sehari-hari.</p>
           </div>
 
           <div>
@@ -63,10 +62,8 @@ defineProps({
             </svg>
 
             <h2 class="text-2xl font-semibold my-4 text-yellow-600">Bertanya Tentang Kesehatan</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laboriosam exercitationem, nulla
-              incidunt
-              totam enim! Saepe, fugiat ullam? Consequatur ipsum saepe repellat aliquam? Suscipit debitis rem esse neque
-              blanditiis enim.</p>
+            <p>Punya pertanyaan tentang kesehatan? Ajukan pertanyaan Anda kepada para ahli kami. Kami akan membantu
+              memberikan jawaban yang cepat dan akurat terkait kekhawatiran kesehatan Anda.</p>
           </div>
 
           <div>
@@ -76,11 +73,10 @@ defineProps({
                 d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Zm6-10.125a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Zm1.294 6.336a6.721 6.721 0 0 1-3.17.789 6.721 6.721 0 0 1-3.168-.789 3.376 3.376 0 0 1 6.338 0Z" />
             </svg>
 
-            <h2 class="text-2xl font-semibold my-4 text-yellow-600">Konsultasi Online</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laboriosam exercitationem, nulla
-              incidunt
-              totam enim! Saepe, fugiat ullam? Consequatur ipsum saepe repellat aliquam? Suscipit debitis rem esse neque
-              blanditiis enim.</p>
+            <h2 class="text-2xl font-semibold my-4 text-yellow-600">Konsultasi Daring</h2>
+            <p>Layanan konsultasi daring yang memungkinkan Anda berbicara langsung dengan tenaga medis berpengalaman.
+              Konsultasi ini memudahkan Anda untuk mendapatkan diagnosis awal dan saran medis tanpa perlu keluar rumah.
+            </p>
           </div>
 
         </div>

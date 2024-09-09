@@ -2,6 +2,8 @@
 import VisitorLayout from '@/Layouts/VisitorLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue';
+import { Link } from '@inertiajs/vue3';
+import TextareaInput from '@/Components/TextareaInput.vue';
 
 defineProps({
     questions: Array
@@ -52,21 +54,16 @@ function handleClose() {
                     Tanya Pengusada
                 </h1>
                 <div class="flex space-x-3">
-                    <button @click="handleModal" class="border border-green-500 py-3 px-5 font-semibold text-green-600">
+                    <Link :href="route('login')" v-if="$page.props.auth.user === null"
+                        class="border border-green-500 py-3 px-5 font-semibold text-green-600">Buat Pertanyaan</Link>
+                    <button v-else @click="handleModal"
+                        class="border border-green-500 py-3 px-5 font-semibold text-green-600">
                         Buat Pertanyaan
                     </button>
                     <button class="bg-green-500 py-3 px-5 font-semibold text-white">
                         Cari Pertanyaan Berdasarkan Topik
                     </button>
                 </div>
-
-
-                <!-- Modal toggle -->
-                <!-- <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                    class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    type="button">
-                    Toggle modal
-                </button> -->
 
                 <!-- Main modal -->
                 <div id="default-modal" tabindex="-1" aria-hidden="true"
@@ -80,7 +77,7 @@ function handleClose() {
                         <!-- Modal header -->
                         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
                             <h3 class="text-xl font-semibold text-gray-900">
-                                Terms of Service
+                                Silahkan Ajukan Pertanyaan
                             </h3>
                             <button type="button" @click="handleClose"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
@@ -95,25 +92,25 @@ function handleClose() {
                         </div>
                         <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4">
-                            <p class="text-base leading-relaxed text-gray-500">
-                                With less than a month to go before the European Union enacts new consumer privacy
-                                laws for its citizens, companies around the world are updating their terms of
-                                service agreements to comply.
-                            </p>
-                            <p class="text-base leading-relaxed text-gray-500">
-                                The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect
-                                on May 25 and is meant to ensure a common set of data rights in the European Union.
-                                It requires organizations to notify users as soon as possible of high-risk data
-                                breaches that could personally affect them.
-                            </p>
+                            <div class="flex flex-col">
+                                <label for="title" class="text-slate-700 font-semibold">Judul Pertanyaan</label>
+                                <input type="text" name="question" id="question" placeholder="Pertanyaan..."
+                                    class="w-full border border-slate-300 rounded">
+                            </div>
+
+                            <div class="">
+                                <label for="description" class="text-slate-700 font-semibold">Penjelasan /
+                                    Keterangan</label>
+                                <TextareaInput />
+                            </div>
                         </div>
                         <!-- Modal footer -->
                         <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
                             <button data-modal-hide="default-modal" type="button"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">I
-                                accept</button>
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                Kirim</button>
                             <button data-modal-hide="default-modal" type="button"
-                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Decline</button>
+                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Batal</button>
                         </div>
                     </div>
                 </div>
