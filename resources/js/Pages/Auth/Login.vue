@@ -6,6 +6,9 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import EyeOpenIcon from '@/Components/EyeOpenIcon.vue';
+import EyeCloseIcon from '@/Components/EyeCloseIcon.vue';
+import { ref } from 'vue';
 
 defineProps({
     canResetPassword: {
@@ -15,6 +18,8 @@ defineProps({
         type: String,
     },
 });
+
+const isOpen = ref(false);
 
 const form = useForm({
     email: '',
@@ -51,9 +56,16 @@ const submit = () => {
             <div class="mt-4">
                 <InputLabel for="password" value="Password" />
 
-                <TextInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required
-                    autocomplete="current-password" />
-
+                <div class="relative">
+                    <TextInput id="password" :type="isOpen ? 'text' : 'password'" class="mt-1 block w-full"
+                        v-model="form.password" required />
+                    <button v-if="isOpen" class="absolute top-2 right-2" @click="isOpen = false">
+                        <EyeOpenIcon />
+                    </button>
+                    <button v-else class="absolute top-2 right-2" @click="isOpen = true">
+                        <EyeCloseIcon />
+                    </button>
+                </div>
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 

@@ -1,23 +1,27 @@
 <script setup>
 import VisitorLayout from '@/Layouts/VisitorLayout.vue';
 import { Head } from '@inertiajs/vue3';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Link, useForm } from '@inertiajs/vue3';
-import TextareaInput from '@/Components/TextareaInput.vue';
+import DataTable from 'datatables.net-vue3';
+import DataTablesCore from 'datatables.net-dt';
+import { Link } from '@inertiajs/vue3';
+
+DataTable.use(DataTablesCore);
 
 const props = defineProps({
+    consultations: Array,
     user: Object,
 });
 
-const form = useForm({
-    fullname: props.user ? props.user.name : '',
-    email: props.user ? props.user.email : '',
-    phone: '',
-    complaint: ''
-});
+const columns = [
+    { data: 'problem', title: 'Keluhan / Masalah' },
+    { data: 'consult_status', title: 'Status' },
+    {
+        data: null,
+        render: '#action',
+        title: 'Action'
+    },
+];
+
 </script>
 
 <template>
@@ -28,55 +32,38 @@ const form = useForm({
 
         <div class="py-12 flex-1">
             <h1 class="text-4xl mb-8 text-slate-700 font-semibold">
-                Konsultasi
+                Daftar Konsultasi
             </h1>
-            <!-- <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6"> -->
-            <form @submit.prevent="" class="mt-6 space-y-6">
-                <div class="">
-                    <InputLabel for="fullname" value="Nama lengkap" />
 
-                    <TextInput id="fullname" type="text" class="mt-1 block w-full" v-model="form.fullname" required
-                        autofocus autocomplete="fullname" />
+            <div v-if="user">
+                <Link :href="route('konsultasi.create')"
+                    class="bg-green-500 py-3 px-5 font-semibold text-white rounded">
+                Buat Konsultasi
+                Baru</Link>
 
-                    <InputError class="mt-2" :message="form.errors.fullname" />
+                <div class="my-8">
+                    <DataTable :columns="columns" :data="consultations" class="display" width="100%">
+                        <template #action="props">
+                            <!-- <button class="bg-slate-500 text-white">Edit {{ props.rowData.id }}</button> -->
+                            <button>Action is inprogress</button>
+                        </template>
+                    </DataTable>
                 </div>
+            </div>
 
-                <div>
-                    <InputLabel for="email" value="Email" />
+            <div v-else>Silahkan login atau registrasi akun</div>
 
-                    <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required
-                        autocomplete="email" />
 
-                    <InputError class="mt-2" :message="form.errors.email" />
-                </div>
-
-                <div class="">
-                    <InputLabel for="phone" value="Telephone atau (WhatsApp)" />
-
-                    <TextInput id="phone" type="tel" class="mt-1 block w-full" v-model="form.phone" required
-                        autocomplete="phone" />
-
-                    <InputError class="mt-2" :message="form.errors.phone" />
-                </div>
-
-                <div>
-                    <InputLabel for="complaint" value="Keluhan" />
-
-                    <TextareaInput required />
-
-                    <InputError class="mt-2" :message="form.errors.complaint" />
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
-
-                    <Transition enter-active-class="transition ease-in-out" enter-from-class="opacity-0"
-                        leave-active-class="transition ease-in-out" leave-to-class="opacity-0">
-                        <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>
-                    </Transition>
-                </div>
-            </form>
         </div>
 
     </VisitorLayout>
 </template>
+
+<style>
+@import 'datatables.net-dt';
+
+select.dt-input {
+    width: 5rem;
+    margin-right: 0.5rem;
+}
+</style>

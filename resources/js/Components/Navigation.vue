@@ -75,7 +75,6 @@ const displayDropdown = computed(() => {
 
                             <template #content>
                                 <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
-                                <DropdownLink :href="route('profile.update')"> Setting </DropdownLink>
                                 <DropdownLink :href="route('logout')" method="post" as="button">
                                     Log Out
                                 </DropdownLink>
@@ -121,6 +120,13 @@ const displayDropdown = computed(() => {
                     v-for="item in navigations">
                     {{ item.title }}
                 </NavLinkEU>
+            </div>
+            <div v-if="$page.props.auth.user">
+                <NavLinkEU key="profile" :href="route('profile.edit')" :active="route().current('profile.edit')">Profile
+                </NavLinkEU>
+                <NavLinkEU key="logout" :href="route('logout')" :active="route().current('logout')" method="post"
+                    as="button">
+                    Logout</NavLinkEU>
             </div>
         </div>
     </nav>

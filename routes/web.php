@@ -70,10 +70,10 @@ Route::resource('pengusada', PengusadaController::class)
     ->only(['index']);
 
 Route::resource('bertanya', BertanyaController::class)
-    ->only(['index']);
+    ->only(['index', 'create', 'show', 'store']);
 
 Route::resource('konsultasi', KonsultasiController::class)
-    ->only(['index']);
+    ->only(['index', 'create', 'store']);
 
 Route::resource('tentang', TentangController::class)
     ->only(['index']);
