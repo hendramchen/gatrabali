@@ -10,9 +10,9 @@ class InfoController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::orderByDesc('created_at')->paginate(10);
 
-        return Inertia::render('Info/Index', ['blogs' => $blogs]);
+        return Inertia::render('Info/Index', ['info' => $blogs]);
     }
 
     public function show($id)

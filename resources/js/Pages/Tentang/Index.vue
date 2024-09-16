@@ -19,12 +19,12 @@ defineProps({
                 <div class="flex flex-col items-center">
                     <img src="images/avatar-2.jpg" alt="avatar 1" class="rounded-lg w-32" />
                     <h3 class="font-semibold text-lg mt-3">Karlina Sumiari</h3>
-                    <p>Dosen Fakultas A</p>
+                    <div>Dosen Fakultas A</div>
                 </div>
                 <div class="flex flex-col items-center">
                     <img src="images/avatar-4.jpg" alt="avatar 4" class="rounded-lg w-32" />
                     <h3 class="font-semibold text-lg mt-3">Sukma Megaputri</h3>
-                    <p>Dosen Fakultas B</p>
+                    <div>Dosen Fakultas B</div>
                 </div>
             </div>
             <p class="mt-4 text-lg leading-9">{{ about.description }}</p>

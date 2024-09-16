@@ -55,10 +55,10 @@ const form = useForm({
                             {{ item.user.name.charAt(0) }}
                         </div>
                         <div class="my-4 md:my-0 md:ml-4">
-                            <p class="font-semibold">
+                            <div class="font-semibold">
                                 {{ item.title }}
-                            </p>
-                            <p>Oleh: {{ item.user.name }}</p>
+                            </div>
+                            <div>Oleh: {{ item.user.name }}</div>
                             <Link :href="route('bertanya.show', item.id)">Detail</Link>
                         </div>
                     </div>

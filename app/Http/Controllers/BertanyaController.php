@@ -14,7 +14,7 @@ class BertanyaController extends Controller
 {
     public function index()
     {
-        $questions = Question::with(['user', 'answers'])->orderByDesc('created_at')->paginate(5);
+        $questions = Question::with(['user', 'answers'])->orderByDesc('created_at')->paginate(10);
 
         return Inertia::render('Bertanya/Index', ['questions' => $questions]);
     }

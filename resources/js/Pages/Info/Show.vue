@@ -29,9 +29,16 @@ function getImageCover(item) {
         <div class="py-12 text-slate-700 text-lg">
             <h1 class="text-slate-700 text-4xl font-semibold mb-9">{{ blog.title }}</h1>
             <p class="font-semibold text-slate-700 my-4 leading-9">{{ blog.highlight }}</p>
-            <img :src="getImageCover(blog.image_path)" class="rounded-md w-full my-6" alt="kesehatan" />
-            <p v-html="html" class="leading-9"></p>
+            <img v-if="blog.image_path != null" :src="getImageCover(blog.image_path)" class="rounded-md w-full my-6"
+                alt="kesehatan" />
+            <div v-html="html" class="leading-9"></div>
         </div>
     </VisitorLayout>
 
 </template>
+
+<style>
+p {
+    margin: 1rem 0;
+}
+</style>
