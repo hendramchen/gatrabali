@@ -12,11 +12,19 @@ use Illuminate\Support\Str;
 
 class BertanyaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $questions = Question::with(['user', 'answers'])->orderByDesc('created_at')->paginate(10);
+        $title = Str::trim($request->input('title'));
 
-        return Inertia::render('Bertanya/Index', ['questions' => $questions]);
+        $questions = null;
+
+        if ($title !== '') {
+            $questions = Question::with(['user', 'answers'])->title($title)->orderByDesc('created_at')->paginate(10);
+        } else {
+            $questions = Question::with(['user', 'answers'])->orderByDesc('created_at')->paginate(10);
+        }
+
+        return Inertia::render('Bertanya/Index', ['questions' => $questions, 'title' => $title]);
     }
 
     public function create()

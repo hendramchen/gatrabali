@@ -67,7 +67,7 @@ Route::resource('info', InfoController::class)
     ->only(['index', 'show']);
 
 Route::resource('pengusada', PengusadaController::class)
-    ->only(['index']);
+    ->only(['index', 'show']);
 
 Route::resource('bertanya', BertanyaController::class)
     ->only(['index', 'create', 'show', 'store']);
