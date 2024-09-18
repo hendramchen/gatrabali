@@ -18,5 +18,11 @@ class DoctorSeeder extends Seeder
             'user_id' => 6,
             'description' => 'Pengobat tradisional'
         ]);
+
+        Doctor::create([
+            'category_id' => 1,
+            'user_id' => 7,
+            'description' => 'Pengobat tradisional anak'
+        ]);
     }
 }

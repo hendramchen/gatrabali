@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Subdistrict;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,37 +18,43 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Administrator',
-            'email' => 'admin@example.com',
+            'email' => 'admin@gatrabali.org',
             'role' => 'admin',
         ]);
 
         User::factory()->create([
             'name' => 'Putu',
-            'email' => 'putu@example.com',
+            'email' => 'putu@mail.com',
             'role' => 'visitor',
         ]);
 
         User::factory()->create([
             'name' => 'Kadek',
-            'email' => 'kadek@example.com',
+            'email' => 'kadek@mail.com',
             'role' => 'visitor',
         ]);
 
         User::factory()->create([
             'name' => 'Wayan',
-            'email' => 'wayan@example.com',
+            'email' => 'wayan@mail.com',
             'role' => 'visitor',
         ]);
 
         User::factory()->create([
             'name' => 'Komang',
-            'email' => 'komang@example.com',
+            'email' => 'komang@mail.com',
             'role' => 'visitor',
         ]);
 
         User::factory()->create([
             'name' => 'Manika',
-            'email' => 'manika@example.com',
+            'email' => 'manika@mail.com',
+            'role' => 'doctor',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Hendra',
+            'email' => 'hendra@mail.com',
             'role' => 'doctor',
         ]);
 
@@ -58,6 +65,8 @@ class DatabaseSeeder extends Seeder
             AnswerSeeder::class,
             DoctorSeeder::class,
             ConsultationSeeder::class,
+            DistrictSeeder::class,
+            SubdistrictSeeder::class,
         ]);
     }
 }

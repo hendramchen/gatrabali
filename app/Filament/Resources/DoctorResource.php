@@ -34,7 +34,9 @@ class DoctorResource extends Resource
                         Forms\Components\TextInput::make('slug')->required()->maxLength(255),
                     ])
                     ->required(),
-                Forms\Components\Select::make('user_id')->relationship('user', 'name')->required(),
+                Forms\Components\Select::make('user_id')->relationship('user', 'name', function ($query) {
+                    return $query->where('role', 'doctor');
+                })->required(),
                 Forms\Components\Textarea::make('description')
                     ->maxLength(65535)
                     ->columnSpan('full'),
@@ -47,6 +49,7 @@ class DoctorResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('user.name'),
+                Tables\Columns\TextColumn::make('user.address')->label('Address'),
                 Tables\Columns\TextColumn::make('description'),
             ])
             ->filters([
