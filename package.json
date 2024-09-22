@@ -21,6 +21,7 @@
         "@tinymce/tinymce-vue": "^5.1.1",
         "datatables.net-dt": "^2.1.5",
         "datatables.net-vue3": "^3.0.2",
+        "date-fns": "^4.1.0",
         "showdown": "^2.1.0"
     }
 }

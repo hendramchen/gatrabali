@@ -1,9 +1,6 @@
 <script setup>
 import VisitorLayout from '@/Layouts/VisitorLayout.vue';
 import { Head } from '@inertiajs/vue3';
-// import InputError from '@/Components/InputError.vue';
-// import TextareaInput from '@/Components/TextareaInput.vue';
-// import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
     question: Object,
@@ -24,7 +21,9 @@ const props = defineProps({
             <p class="text-lg text-slate-700 my-4">{{ question.description }}</p>
             <div v-if="answers.length > 0" class="text-lg text-slate-700 my-4">
                 <div class="flex items-center space-x-5 my-6">
-                    <img :src="'/storage/' + answers[0].user.photo" alt="avatar 1" class="rounded-lg w-16" />
+                    <img v-if="answers[0].user.photo" :src="'/storage/' + answers[0].user.photo" alt="avatar 1"
+                        class="rounded-lg w-16" />
+                    <img v-else src="/images/avatar-default.png" alt="avatar 1" class="rounded-lg w-16" />
                     <div class="text-lg">
                         <h2 class="text-2xl font-semibold">{{ answers[0].user.name }}</h2>
                     </div>

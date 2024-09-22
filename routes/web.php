@@ -70,7 +70,7 @@ Route::resource('pengusada', PengusadaController::class)
     ->only(['index', 'show']);
 
 Route::resource('bertanya', BertanyaController::class)
-    ->only(['index', 'create', 'show', 'store']);
+    ->only(['index', 'create', 'show', 'store', 'edit', 'update']);
 
 Route::resource('konsultasi', KonsultasiController::class)
     ->only(['index', 'create', 'store']);

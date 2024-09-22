@@ -14,12 +14,6 @@ const props = defineProps({
 
 const columns = [
     { data: 'problem', title: 'Keluhan / Masalah' },
-    { data: 'consult_status', title: 'Status' },
-    {
-        data: null,
-        render: '#action',
-        title: 'Action'
-    },
 ];
 
 </script>
@@ -43,17 +37,13 @@ const columns = [
 
                 <div class="my-8">
                     <DataTable :columns="columns" :data="consultations" class="display" width="100%">
-                        <template #action="props">
-                            <!-- <button class="bg-slate-500 text-white">Edit {{ props.rowData.id }}</button> -->
-                            <button>Action is inprogress</button>
-                        </template>
                     </DataTable>
                 </div>
             </div>
 
-            <div v-else>Silahkan login atau registrasi akun</div>
-
-
+            <div class="text-lg text-slate-700" v-else>Untuk bisa melakukan konsultasi, silahkan login atau registrasi
+                akun terlebih
+                dahulu.</div>
         </div>
 
     </VisitorLayout>

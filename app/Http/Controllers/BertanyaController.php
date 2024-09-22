@@ -24,7 +24,7 @@ class BertanyaController extends Controller
             $questions = Question::with(['user', 'answers'])->orderByDesc('created_at')->paginate(10);
         }
 
-        return Inertia::render('Bertanya/Index', ['questions' => $questions, 'title' => $title]);
+        return Inertia::render('Bertanya/Index', ['questions' => $questions, 'title' => $title, 'user' => $request->user()]);
     }
 
     public function create()
@@ -32,7 +32,15 @@ class BertanyaController extends Controller
         $user = Auth::user();
         $question = new Question();
 
-        return Inertia::render('Bertanya/Create', ['user' => $user, 'question' => $question]);
+        if ($user === null) {
+            return Redirect::route('login');
+        }
+
+        return Inertia::render('Bertanya/Create', [
+            'user' => $user,
+            'question' => $question,
+            'status' => session('status'),
+        ]);
     }
 
     public function store(Request $request)
@@ -59,5 +67,45 @@ class BertanyaController extends Controller
         $answers = Answer::with('user')->where('question_id', $id)->get();
 
         return Inertia::render('Bertanya/Show', ['question' => $question, 'answers' => $answers]);
+    }
+
+    public function edit($id = 0)
+    {
+        $user = Auth::user();
+        $question = Question::with('user')->where('id', $id)->first();
+
+        if ($user->role !== 'doctor') {
+            return Redirect::route('bertanya.index');
+        }
+
+        if ($user === null) {
+            return Redirect::route('login');
+        }
+
+        return Inertia::render('Bertanya/Edit', [
+            'user' => $user,
+            'question' => $question,
+            'status' => session('status'),
+        ]);
+    }
+
+    public function update(Request $request, $id = 0)
+    {
+        $validated = $request->validate([
+            'description' => 'required',
+        ]);
+
+        $question = Question::find($id);
+        $question->question_status = 'done';
+        $question->save();
+
+
+        Answer::create([
+            'question_id' => $id,
+            'description' => $validated['description'],
+            'user_id' => $request->user()->id,
+        ]);
+
+        return Redirect::route('bertanya.show', $id);
     }
 }

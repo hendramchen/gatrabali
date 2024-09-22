@@ -3,11 +3,19 @@ import VisitorLayout from '@/Layouts/VisitorLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { Link } from '@inertiajs/vue3';
 import Pagination from '@/Components/Pagination.vue';
+import { parseISO, formatDistanceToNow } from 'date-fns';
 
 defineProps({
     questions: Object,
     title: String,
+    user: Object,
 });
+
+function convertDateToReadable(dateString = '') {
+    const date = parseISO(dateString);
+
+    return formatDistanceToNow(date, { addSuffix: true });
+}
 
 </script>
 
@@ -47,8 +55,16 @@ defineProps({
                             <div class="font-semibold">
                                 {{ item.title }}
                             </div>
-                            <div>Oleh: {{ item.user.name }}</div>
-                            <Link :href="route('bertanya.show', item.id)" class="text-green-700 font-semibold">Detail
+                            <div><span class="font-semibold">Oleh:</span> {{ item.user.name }} | <span
+                                    class="text-slate-400 font-semibold">{{ convertDateToReadable(item.created_at)
+                                    }}</span>
+                            </div>
+                            <Link v-if="item.question_status === 'done'" :href="route('bertanya.show', item.id)"
+                                class="text-green-700 font-semibold">Lihat Balasan
+                            </Link>
+                            <Link v-if="item.question_status === 'pending' && user && user.role === 'doctor'"
+                                :href="route('bertanya.edit', item.id)" class="text-orange-700 font-semibold">
+                            Balas Pertanyaan
                             </Link>
                         </div>
                     </div>

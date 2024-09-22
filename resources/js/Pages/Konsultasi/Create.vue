@@ -7,16 +7,18 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { useForm } from '@inertiajs/vue3';
 import TextareaInput from '@/Components/TextareaInput.vue';
+import VerifiedEmail from '@/Components/VerifiedEmail.vue';
 
 const props = defineProps({
     user: Object,
     consultation: Object,
+    status: String,
 });
 
 const form = useForm({
     fullname: props.user ? props.user.name : '',
     email: props.user ? props.user.email : '',
-    phone: props.consultation.phone ?? '',
+    phone: props.user ? props.user.phone : '',
     problem: props.consultation.problem ?? ''
 });
 </script>
@@ -31,8 +33,12 @@ const form = useForm({
             <h1 class="text-4xl mb-8 text-slate-700 font-semibold">
                 Formulir Konsultasi
             </h1>
+
+            <div v-if="user.email_verified_at === null">
+                <VerifiedEmail :status="status" />
+            </div>
             <!-- <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6"> -->
-            <form @submit.prevent="form.post(route('konsultasi.store'))" class="mt-6 space-y-6">
+            <form @submit.prevent="form.post(route('konsultasi.store'))" class="mt-6 space-y-6" v-else>
                 <div class="">
                     <InputLabel for="fullname" value="Nama lengkap" />
 
