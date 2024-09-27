@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Documentation</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="text-lg text-slate-700">
+        <main class="px-4 md:px-0 max-w-4xl mx-auto my-8">
+            <header
+                class="flex flex-col md:flex-row items-center md:space-x-5 pb-5 border-b border-slate-300"
+            >
+                <img
+                    class="w-24"
+                    src="/images/gatrabali-logo.svg"
+                    alt="Gatrabali"
+                />
+                <div class="text-center md:text-left">
+                    <h1 class="text-green-700 text-2xl font-bold">Gatrabali</h1>
+                    <p class="font-semibold text-yellow-600">
+                        Pengobatan Tradisional Bali
+                    </p>
+                </div>
+            </header>
+            <h1 class="text-3xl font-bold mt-6 mb-4">Pendahuluan</h1>
+            <p class="my-3">
+                Website adalah media digital yang wajib ada pada suatu bisnis
+                atau organisasi saat ini. Mengingat banyak masyarakat yang
+                ketergantungan dengan gadget (gawai) akhir-akhir ini. Secara
+                garis besar website terdiri dari 2 jenis sesuai fungsi nya.
+                Website hanya menampilkan informasi, dan web app (website
+                aplikasi) atau yang bisa berinteraksi dengan pengunjung, seperti
+                fitur booking, sistem admin.
+            </p>
+            <p class="my-3">
+                Web Gatrabali adalah salah satu jenis website aplikasi yang
+                memberikan layanan bertanya kepada pengusada, konsultasi, dan
+                fitur admin untuk mengelola konten. Dalam web ini juga akan ada
+                3 jenis user berbeda, yaitu, admin, pengusada, dan visitor.
+                Mereka memiliki hak akses yang berbeda sesuai jenis user nya.
+            </p>
+            <p class="my-3">
+                Dokumen ini akan menjelaskan cara penggunaan website Gatrabali
+                baik dari sisi admin atau dari sisi depan (pengunjung dan
+                pangusada).
+            </p>
+
+            <h1 class="text-3xl font-bold mt-6 mb-4">
+                Sistem Administrator (Admin)
+            </h1>
+            <p class="my-3">
+                Untuk dapat login ke sistem admin, user bisa akses url atau
+                alamat berikut di browser:
+                <a
+                    class="text-green-600 underline"
+                    href="https://gatrabali.org/admin/login"
+                    >https://gatrabali.org/admin/login</a
+                >
+            </p>
+            <p class="my-3">
+                <img src="/documentation/loginadmin.png" alt="dashboard" />
+            </p>
+            <p class="my-3">
+                Untuk dapat login ke halaman admin, user diwajibkan untuk
+                menggunakan domain gatrabali. Seperti admin@gatrabali.org,
+                hello@gatrabali.org , atau yang berakhiran @gatrabali.org.
+                Selain domain itu, user tidak bisa login ke halaman admin.
+            </p>
+            <p class="my-3">
+                Sistem Admin memiliki 8 menu yang terletak disebelah kiri,
+                yaitu: Dashboard, Tentang, Artikel, Konsultasi, Kabupaten,
+                Pengusada, Pertanyaan, Pengguna.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Dashboard</h2>
+            <p class="my-3">
+                Setelah login berhasil, maka user akan dihadapkan dengan halaman
+                dashboard. Seperti gambar berikut.
+            </p>
+            <p class="my-3">
+                <img src="/documentation/dashboard.png" alt="dashboard" />
+            </p>
+            <p class="my-3">
+                Ada beberapa panel widget di dashboard, yaitu grafik untuk
+                menghitung jumlah user bertanya dan jawaban, jumlah user di
+                masing-masing kabupaten.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Tentang</h2>
+            <p class="my-3">
+                Pada halaman Tentang, pengguna bisa edit informasi yang ingin di
+                tampilkan di bagian sistem depan. Pengguna hanya bisa edit
+                Tentang yang sudah ada, meski pengguna bisa tambah baris
+                informasi baru, namun yang dipakai hanyalah informasi Tentang
+                yang pertama.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Artikel</h2>
+            <p class="my-3">
+                Seperti kebanyakan web penyedia jasa, fitur artikel sangat
+                penting untuk mempromosikan website, atau memberikan informasi
+                yang relevan terkait apa jasa atau layanan yang kita berikan ke
+                klien atau pengunjung website. Perlu diingat, admin atau
+                copywriter harus rajin-rajin menulis artikel demi meningkatkan
+                rating website di pencarian google, minimal seminggu sekali
+                posting.
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/h9komkI8tuU?si=PwOwANfJ8Pku4Ayn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Konsultasi</h2>
+            <p class="my-3">
+                Daftar konsultasi pada bagian admin digunakan untuk melihat
+                klien atau pengunjung yang telah mengirim pesan konsultasi.
+                Pihak admin bisa edit konsultasi dari status pending ke status
+                done.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Kabupaten</h2>
+            <p class="my-3">
+                Daftar kabupaten adalah master data untuk pengisian alamat pada
+                data pengguna. Jadi data-data kabupaten sudah tersedia dan
+                tinggal dipakai di halaman user. Jika setiap user yang
+                registrasi melengkapi data-data nya seperti kabupaten dan
+                kecamatan, kita bisa tau berpa jumlah user pada kabupaten
+                Buleleng, Badung, dll.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Pengusada</h2>
+            <p class="my-3">
+                Halaman pengusada berisi daftar pengusada dengan berbagai
+                kategori yang ada. Tidak seperti user (visitor), pengusada
+                didaftarkan langsung oleh tim admin, karena butuh verifikasi
+                data. Sebelum menambah data pengusada, admin harus membuat user
+                baru di halaman Pengguna dengan role user “pengusada”.
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9dskzpr6UsM?si=wUFbsgvON9N8P8Yx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Pertanyaan</h2>
+            <p class="my-3">
+                Daftar pertanyaan datang dari pengunjung-pengunjung yang sudah
+                terdaftar. Disini admin atau tim admin bisa merespon pertanyaan
+                dari pengunjung. Namun, disisi lain, pengusada bisa login dan
+                balas pertanyaan lewat sistem depan.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Pengguna</h2>
+            <p class="my-3">
+                Daftar pengguna terdiri dari pengunjung, pengusada dan admin.
+                Admin user bisa menambahkan pengguna baru dan memberikan role
+                atau tipe user itu sendiri, tipe admin, pengusada atau visitor.
+            </p>
+
+            <h1 class="text-3xl font-bold mt-6 mb-4">
+                Sistem Depan (Pengunjung & Pengusada)
+            </h1>
+
+            <h2 class="text-2xl font-semibold my-3">Login</h2>
+            <p class="my-3">
+                Saat user mengakses alamat website Gatrabali di: https://gatrabali.org/ , user bisa menemukan link untuk halaman login, yaitu menu Masuk di pojok kanan atas. Setelah pengunjung memasukkan email dan password dengan benar, dan login berhasil, maka pengunjung bisa mengakses penuh web Gatrabali, yaitu bisa mengajukan pertanyaan di halaman bertanya, mengajukan konsultasi di halaman konsultasi, serta memperbaharui profile.
+            </p>
+            <p class="my-3">
+                <img src="/documentation/loginuser.png" alt="login" />
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Registrasi</h2>
+            <p class="my-3">
+                Halaman Registrasi bisa ditemui dengan mengklik link “registrasi” pada halaman login. Pengunjung hanya butuh mengentry nama lengkap, email yang aktif, dan password yang aman.
+            </p>
+            <p class="my-3"></p>
+                <img src="/documentation/registrasi.png" alt="registrasi" />
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Verifikasi Email</h2>
+            <p class="my-3">Verifikasi email penting dilakukan agar proses konsultasi atau buat pertanyaan bisa dilakukan. Untuk melakukan verifikasi email, user bisa ikuti langkah-lankah di video ini.</p>
+            <p class="my-3">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/g1xWO7hFJa0?si=IQvC3cWDauKXIrgN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Lupa Password</h2>
+            <p class="my-3">
+                Untuk halaman lupa password, user bisa klik link “lupa password” pada halaman login. Ketika user lupa password, maka user bisa mengubah password dengan menginput email terlebih dahulu, kemudian klik tombol “Email Password Reset Link”. Sistem akan mengirimkan link untuk reset password ke email aktif user. Misal sistem akan mengirimkan link ke email nama@gmail.com
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8vW8UrLIwzA?si=sqkeuW0m2zyifQk3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Profile</h2>
+            <p class="my-3">
+                Pada halaman profile, user bisa melengkapi data diri pengguna. Ini penting untuk proses konsultasi bisa lebih lancar.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Beranda</h2>
+            <p class="my-3">
+                Halaman Utama atau Beranda, berisi informasi terkait website ini memberikan layanan apa saja ke pengunjung. Secara sederhana, halaman home berisi, header, layanan kami, dan beberapa artikel.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Info</h2>
+            <p class="my-3">
+                Halaman Info adalah halaman yang berisi artikel-artikel yang ditulis oleh admin. Artikel ini berguna untuk mengedukasi atau memberikan informasi ke pengunjung seputar kesehatan. Perlu ditekankan, untuk membuat website kita lebih dikenal google, maka setidaknya ada satu artikel yang dipublish setiap minggu nya.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Bertanya</h2>
+            <p class="my-3">
+                Fitur Bertanya adalah salah satu fitur dari Gatrabali. Dimana pengguna bisa bertanya seputar kesehatan. Sebisa mungkin admin atau pengusada bisa membalas pertanyaan tersebut. Hanya pengguna yang terdaftar yang bisa mengajukan pertanyaan. Pengguna yang belum mendaftar hanya bisa melihat daftar pertanyaan saja.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Pengusada</h2>
+            <p class="my-3">
+                Halaman Pengusada menampilkan daftar pengusada dengan kategori tertentu. Pengguna juga bisa melihat detail dari pengusada dengan mengklik nama dari pengusada tersebut.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Konsultasi</h2>
+            <p class="my-3">
+                Pada halaman konsultasi, pengguna yang telah terdaftar bisa melakukan konsultasi dengan mengisi formulir yang telah disediakan.
+            </p>
+
+            <h2 class="text-2xl font-semibold my-3">Tentang</h2>
+            <p class="my-3">
+                Halaman tentang memuat informasi terkait siapa pendiri website Gatrabali, dan apa visi misi dari website Gatrabali.
+            </p>
+
+            <!-- <video class="w-full" controls>
+                <source src="videos/Homvideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video> -->
+        </main>
+    </body>
+</html>

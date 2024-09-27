@@ -17,14 +17,24 @@ defineProps({
             <h2 class="text-lg font-semibold w-2/3 my-4">{{ about.subtitle }}</h2>
             <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-10 my-6">
                 <div class="flex flex-col items-center">
-                    <img src="images/avatar-2.jpg" alt="avatar 1" class="rounded-lg w-32" />
+                    <img src="images/karlina.jpeg" alt="avatar 1" class="rounded-lg w-32" />
                     <h3 class="font-semibold text-lg mt-3">Karlina Sumiari</h3>
-                    <div>Dosen Fakultas A</div>
+                    <div>Tim Gatrabali</div>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="images/avatar-4.jpg" alt="avatar 4" class="rounded-lg w-32" />
+                    <img src="images/sukma.jpeg" alt="avatar 4" class="rounded-lg w-32" />
                     <h3 class="font-semibold text-lg mt-3">Sukma Megaputri</h3>
-                    <div>Dosen Fakultas B</div>
+                    <div>Tim Gatrabali</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="images/dian.jpeg" alt="avatar 4" class="rounded-lg w-32" />
+                    <h3 class="font-semibold text-lg mt-3">Dian Prima</h3>
+                    <div>Tim Gatrabali</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="images/hendra.jpg" alt="avatar 4" class="rounded-lg w-32" />
+                    <h3 class="font-semibold text-lg mt-3">Hendra Putu</h3>
+                    <div>Web Developer</div>
                 </div>
             </div>
             <p class="mt-4 text-lg leading-9">{{ about.description }}</p>
