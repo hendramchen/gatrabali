@@ -62,7 +62,7 @@ function convertDateToReadable(dateString = '') {
                             <Link v-if="item.question_status === 'done'" :href="route('bertanya.show', item.id)"
                                 class="text-green-700 font-semibold">Lihat Balasan
                             </Link>
-                            <Link v-if="item.question_status === 'pending' && user && user.role === 'doctor'"
+                            <Link v-if="item.question_status === 'pending' && user && user.role !== 'visitor'"
                                 :href="route('bertanya.edit', item.id)" class="text-orange-700 font-semibold">
                             Balas Pertanyaan
                             </Link>

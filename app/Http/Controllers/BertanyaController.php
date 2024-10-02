@@ -74,7 +74,7 @@ class BertanyaController extends Controller
         $user = Auth::user();
         $question = Question::with('user')->where('id', $id)->first();
 
-        if ($user->role !== 'doctor') {
+        if ($user->role === 'visitor') {
             return Redirect::route('bertanya.index');
         }
 

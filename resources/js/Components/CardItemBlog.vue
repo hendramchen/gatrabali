@@ -30,7 +30,7 @@ const getWidth = computed(() => {
                     {{ blog.highlight }}
                 </p>
             </div>
-            <Link :href="route('info.show', blog)" class="text-green-700 font-semibold mt-4">
+            <Link :href="route('info.show', { 'slug': blog.slug })" class="text-green-700 font-semibold mt-4">
             Baca Selengkapnya
             </Link>
         </div>

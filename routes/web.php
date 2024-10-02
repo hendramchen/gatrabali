@@ -64,7 +64,8 @@ Route::get('/dashboard', function () {
 
 // Routes for Visitor
 Route::resource('info', InfoController::class)
-    ->only(['index', 'show']);
+    ->only(['index']);
+Route::get('/info/{slug}', [InfoController::class, 'show'])->name('info.show');
 
 Route::resource('pengusada', PengusadaController::class)
     ->only(['index', 'show']);

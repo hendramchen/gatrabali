@@ -15,9 +15,9 @@ class InfoController extends Controller
         return Inertia::render('Info/Index', ['info' => $blogs]);
     }
 
-    public function show($id)
+    public function show($slug = '')
     {
-        $blog = Blog::find($id);
+        $blog = Blog::where('slug', $slug)->first();
 
         return Inertia::render('Info/Show', ['blog' => $blog]);
     }
