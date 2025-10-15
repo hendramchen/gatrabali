@@ -37,8 +37,9 @@ class DoctorResource extends Resource
                 Forms\Components\Select::make('user_id')->relationship('user', 'name', function ($query) {
                     return $query->where('role', 'doctor');
                 })->required(),
-                Forms\Components\Textarea::make('description')
-                    ->maxLength(65535)
+
+                Forms\Components\MarkdownEditor::make('description')
+                    ->required()
                     ->columnSpan('full'),
             ]);
     }

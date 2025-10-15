@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\VisitorController;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -78,5 +79,7 @@ Route::resource('konsultasi', KonsultasiController::class)
 
 Route::resource('tentang', TentangController::class)
     ->only(['index']);
+
+Route::get('/visitor-stats', [VisitorController::class, 'stats'])->name('visitor.stats');
 
 require __DIR__ . '/auth.php';

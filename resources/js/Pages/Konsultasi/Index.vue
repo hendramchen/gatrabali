@@ -44,6 +44,10 @@ const columns = [
             <div class="text-lg text-slate-700" v-else>Untuk bisa melakukan konsultasi, silahkan login atau registrasi
                 akun terlebih
                 dahulu.</div>
+
+            <p class="my-5 text-lg text-slate-700">Atau bisa hubungi Admin via WhatsApp.</p>
+            <a href="https://wa.me/+6287863010609?text=Hay%20admin%20saya%20ingin%20konsultasi%20bisa%20dibantu">
+                <img src="/images/chatonwa.png" /></a>
         </div>
 
     </VisitorLayout>

@@ -1,10 +1,15 @@
 <script setup>
 import VisitorLayout from '@/Layouts/VisitorLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
+import showdown from 'showdown';
 
 const props = defineProps({
     doctor: Object,
 });
+
+const converter = new showdown.Converter();
+const text = props.doctor.description;
+const html = converter.makeHtml(text);
 
 </script>
 
@@ -45,7 +50,8 @@ const props = defineProps({
 
             <div class="my-2 text-lg text-slate-700">
                 <div class="font-semibold">Deskripsi</div>
-                <div>{{ doctor.description ?? '-' }}</div>
+                <div v-if="doctor.description.length === 0">Tidak Ada Keterangan.</div>
+                <div v-else v-html="html" class="leading-9"></div>
             </div>
 
             <div class="my-6" v-if="doctor.user.map_address">

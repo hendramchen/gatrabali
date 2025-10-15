@@ -3,8 +3,6 @@ import VisitorLayout from '@/Layouts/VisitorLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import showdown from 'showdown';
 
-
-
 const props = defineProps({
     blog: Object,
 });
