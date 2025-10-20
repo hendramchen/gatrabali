@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    $blogs = Blog::all();
+    $blogs = Blog::orderByDesc('created_at')->limit(3)->get();
     $categories = Category::all();
     return Inertia::render('Welcome', ['blogs' => $blogs, 'categories' => $categories]);
 });

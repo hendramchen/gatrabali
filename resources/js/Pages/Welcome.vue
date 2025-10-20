@@ -3,6 +3,7 @@ import { Head } from '@inertiajs/vue3';
 import CardItemBlog from '@/Components/CardItemBlog.vue';
 import Navigation from '@/Components/Navigation.vue';
 import Footer from '@/Components/Footer.vue';
+import { Link } from '@inertiajs/vue3';
 
 defineProps({
   blogs: Array,
@@ -89,7 +90,10 @@ defineProps({
           </h1>
 
           <CardItemBlog v-for="item in blogs" :key="item.id" :blog="item" />
-
+          <Link :href="route('info.index')"
+            class="mt-8 bg-green-700 text-white px-6 py-3 rounded-md font-semibold hover:bg-green-800 transition duration-300 self-center">
+            Lihat Semua Artikel
+          </Link>
         </div>
         <aside
           class="md:w-1/4 flex flex-col justify-stretch md:border-l-[1px] md:border-slate-200 md:p-8 px-4 mt-8 md:mt-0">

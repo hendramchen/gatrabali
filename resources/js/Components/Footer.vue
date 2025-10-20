@@ -24,6 +24,8 @@ const navigations = [
         url: 'tentang.index'
     },
 ];
+
+const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -42,7 +44,7 @@ const navigations = [
                     <Link :href="route(item.url)" class="mr-4 hover:underline md:mr-6">{{ item.title }}</Link>
                 </li>
             </ul>
-            <span class="text-sm text-green-200 sm:text-center">&copy; 2024
+            <span class="text-sm text-green-200 sm:text-center">&copy; {{ year }}
                 <a href="#" class="hover:underline">Gatrabali</a>. All Rights Reserved.</span>
         </div>
     </footer>
